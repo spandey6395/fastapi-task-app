@@ -4,7 +4,7 @@ from logging.config import fileConfig
 from sqlalchemy import engine_from_config, pool
 from alembic import context
 from dotenv import load_dotenv
-from app.models import Base  # Moved to top
+from app.models import Base  
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -17,7 +17,7 @@ config = context.config
 # Interpret the config file for Python logging
 fileConfig(config.config_file_name)
 
-# Add your model's MetaData object here
+#  model's MetaData object here
 target_metadata = Base.metadata
 
 

@@ -1,25 +1,3 @@
-# from sqlalchemy import create_engine
-# from sqlalchemy.ext.declarative import declarative_base
-# from sqlalchemy.orm import sessionmaker
-# import os
-# from dotenv import load_dotenv
-
-# load_dotenv()
-
-# DATABASE_URL = os.getenv("DATABASE_URL")
-
-# engine = create_engine(DATABASE_URL)
-# SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-# Base = declarative_base()
-
-
-# def get_db():
-#     db = SessionLocal()
-#     try:
-#         yield db
-#     finally:
-#         db.close()
-
 from sqlalchemy import create_engine, text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -45,8 +23,8 @@ def get_db():
     db = SessionLocal()
     try:
         logger.debug("Testing database connection")
-        with db.begin():  # Ensure transaction context
-            db.execute(text("SELECT 1"))  # Wrap with text()
+        with db.begin():
+            db.execute(text("SELECT 1"))
         logger.debug("Connection test successful, yielding session")
         yield db
     except Exception as e:
