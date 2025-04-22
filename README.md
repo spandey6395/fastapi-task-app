@@ -16,39 +16,39 @@ This is a FastAPI-based application for managing tasks, designed to meet the req
 Here i run every commands on bash
 
 1. **Clone the Repository**:
+
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/spandey6395/fastapi-task-app.git
    cd task-management
+
+   ```
 
 2. Set Up Virtual Environment (optional)
 
 python -m venv venv
-source venv/Scripts/activate  # On Windows
 
+source venv/Scripts/activate # On Windows
 
 3. Install Dependencies:
 
 pip install -r requirements.txt
 
-
 4. Configure Environment:
-Create a .env file in the root directory with the following content:
+   Create a .env file in the root directory with the following content:
 
 DATABASE_URL=postgresql://postgres:yourpass@localhost:5432/your_db_name
 
-
 5. Apply Databse migrations:
-alembic upgrade head
 
+   alembic upgrade head
 
 Running the Application
 
 1. Start the Server:
-uvicorn app.main:app --reload
 
+   uvicorn app.main:app --reload
 
 The app will be available at http://127.0.0.1:8000.
-
 
 2. Test the APIs (using Postman):
 
@@ -62,16 +62,20 @@ Update Task: PUT http://localhost:8000/tasks/{task_id} with body {"title": "Upda
 
 Delete Task: DELETE http://localhost:8000/tasks/{task_id}
 
-
 Project Structure
 
 app/: Contains FastAPI routes, models, schemas, and CRUD logic.
+
 alembic/: Migration scripts for database schema changes.
+
 .env: Environment variables for database connection.
+
 requirements.txt: Python dependencies.
+
 architecture_design.md: Architecture design document for Part 2.
+
 README.md: This file.
 
-
 Architecture Design
+
 For detailed architecture design (Part 2), refer to architecture_design.md, which covers database design, API scalability, authentication setup, caching, message queuing, and a text-based diagram.
