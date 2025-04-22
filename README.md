@@ -23,30 +23,41 @@ Here i run every commands on bash
 
    ```
 
-2. Set Up Virtual Environment (optional)
+2. **Set Up Virtual Environment (optional)**:
 
+```bash
 python -m venv venv
 
 source venv/Scripts/activate # On Windows
 
-3. Install Dependencies:
+```
 
+3. **Install Dependencies**:
+
+```bash
 pip install -r requirements.txt
+
+```
 
 4. Configure Environment:
    Create a .env file in the root directory with the following content:
 
 DATABASE_URL=postgresql://postgres:yourpass@localhost:5432/your_db_name
 
-5. Apply Databse migrations:
+5. **Apply Databse migrations**:
 
+   ```bash
    alembic upgrade head
+
+   ```
 
 Running the Application
 
 1. Start the Server:
 
+```bash
    uvicorn app.main:app --reload
+```
 
 The app will be available at http://127.0.0.1:8000.
 
