@@ -42,7 +42,10 @@ pip install -r requirements.txt
 4. Configure Environment:
    Create a .env file in the root directory with the following content:
 
+```bash
 DATABASE_URL=postgresql://postgres:yourpass@localhost:5432/your_db_name
+
+```
 
 5. **Apply Databse migrations**:
 
